@@ -10,6 +10,7 @@ staff_repo.save(staff1)
 staff2 = Staff('Eliza Thornberry', '30-12-2011', 'Aviary', 4)
 staff_repo.save(staff2)
 
+
 # staff_repo.select_all()
 
 pdb.set_trace()

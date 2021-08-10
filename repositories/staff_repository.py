@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.staff import Staff
+from models.animal import Animal
 
 
 def save(member):
@@ -48,7 +49,7 @@ def update(member):
     run_sql(sql, values)
 
 
-# def tasks(user):
+# def animals(member):
 
 #     tasks = []
 
