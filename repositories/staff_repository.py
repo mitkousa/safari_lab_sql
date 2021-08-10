@@ -17,7 +17,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        member = Staff(row['name'], row['start_date'], row['department'], row['performance'])
+        member = Staff(row['name'], row['start_date'], row['department'], row['performance'], row['id'])
         staff.append(member)
     return staff
 
@@ -28,7 +28,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        member = Staff(result['name'], result['start_date'], result['department'], result['performance'])
+        member = Staff(result['name'], result['start_date'], result['department'], result['performance'], result['id'])
     return member
 
 
@@ -44,7 +44,7 @@ def delete(id):
 
 def update(member):
     sql = "UPDATE staff SET (name, start_date, department, performance) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [member.name, member.start_date, member.department, member.performance]
+    values = [member.name, member.start_date, member.department, member.performance, member.id]
     run_sql(sql, values)
 
 
